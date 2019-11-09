@@ -16,6 +16,7 @@ const App = () => {
           const newTasks = [...tasks];
           newTasks.push(taskInput);
           setTasks(newTasks);
+          setTaskInput("");
         }}
       >
         {tasks.map((element, index) => {
@@ -23,11 +24,12 @@ const App = () => {
             <div className="task">
               <span>
                 <button
+                  type="button"
                   onClick={event => {
                     event.preventDefault();
-
-                    // Tentative pour récupérer l'élément du tableau correspondant à la croix cliquée (ne fonctionne pas):
-                    tasks.splice({ index }, 1);
+                    const arrayToDeleteTask = [...tasks];
+                    arrayToDeleteTask.splice(index, 1);
+                    setTasks(arrayToDeleteTask);
                   }}
                 >
                   ✕
