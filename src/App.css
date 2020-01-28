@@ -29,4 +29,17 @@ h1 {
   color: #606c76;
   margin-left: 20px;
   margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+/* RESET */
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
